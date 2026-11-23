@@ -53,9 +53,9 @@ p{margin:0}
 
 /* Главный экран */
 .banner{position:relative;overflow:hidden}
-.banner img{width:100%;height:560px;object-fit:cover}
+.banner img{width:100%;height:620px;object-fit:cover}
 .banner::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(31,23,18,.92) 0%,rgba(31,23,18,.6) 45%,rgba(31,23,18,.1) 80%),linear-gradient(0deg,rgba(31,23,18,1) 0%,rgba(31,23,18,0) 30%)}
-.banner-text{position:absolute;inset:0;z-index:1;display:flex;align-items:center}
+.banner-text{position:absolute;inset:0;z-index:1;display:flex;align-items:center;padding-bottom:60px}
 .banner-text .wrap{width:100%}
 .banner h1{font-size:clamp(36px,5.6vw,68px);max-width:11ch}
 .banner p{margin-top:18px;font-size:19px;max-width:460px;color:#E6D8C5}
@@ -67,7 +67,7 @@ p{margin:0}
 .btn-dark:hover{border-color:var(--honey);color:var(--milk)}
 
 /* Ряд залов, как у «Девятого вала» */
-.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:-80px;position:relative;z-index:2}
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:-70px;position:relative;z-index:2}
 .tile{display:block;border-radius:18px;overflow:hidden;background:var(--wood-2);text-decoration:none;position:relative;box-shadow:0 12px 30px rgba(0,0,0,.45)}
 .tile img{width:100%;height:190px;object-fit:cover;transition:transform .5s}
 .tile:hover img{transform:scale(1.04)}
@@ -174,6 +174,7 @@ footer a{color:var(--muted)}
   .panel-olive ul{grid-template-columns:1fr}
 }
 @media (max-width:600px){
+  .banner-text{padding-bottom:24px}
   body{font-size:16px;padding-bottom:74px}
   .wrap{padding:0 16px}
   .head .wrap{padding-top:12px;padding-bottom:12px}
@@ -261,16 +262,16 @@ footer a{color:var(--muted)}
 
   <section class="section" id="about">
     <h2>Почему выбирают нас</h2>
-    <div class="panel panel-sage">Весь комплекс — только для вашей компании.<br>До 6 гостей цена не меняется, работаем круглосуточно.</div>
+    <div class="panel panel-sage">Весь комплекс — только для вашей компании. До 6 гостей цена не меняется, работаем круглосуточно.</div>
     <h2 style="margin-top:40px">Что вас ждёт в «Потапыче»</h2>
     <div class="panel panel-olive">
       <ul>
-        <li>финская парная с сухим ровным жаром;</li>
-        <li>глубокий бассейн с постоянной фильтрацией воды;</li>
-        <li>джакузи с гидромассажем и массажное кресло;</li>
-        <li>караоке, бильярд, шахматы и нарды;</li>
-        <li>банкетный зал и две комнаты отдыха;</li>
-        <li>домашняя кухня, чай и кальян по заказу.</li>
+        <li>финская парная с сухим ровным жаром</li>
+        <li>глубокий бассейн с постоянной фильтрацией воды</li>
+        <li>джакузи с гидромассажем и массажное кресло</li>
+        <li>караоке, бильярд, шахматы и нарды</li>
+        <li>банкетный зал и две комнаты отдыха</li>
+        <li>домашняя кухня, чай и кальян по заказу</li>
       </ul>
     </div>
     <div class="text">
@@ -295,7 +296,7 @@ footer a{color:var(--muted)}
       <div class="price-main">
         <div class="sum nowrap">от 2000 ₽</div>
         <div class="per">в час за весь комплекс, до 6 гостей</div>
-        <div class="ex">3 часа впятером — <span class="nowrap">6000 ₽</span>,<br>это <span class="nowrap">1200 ₽</span> с человека</div>
+        <div class="ex">3 часа впятером — <span class="nowrap">6000 ₽</span>, это <span class="nowrap">1200 ₽</span> с человека</div>
         <a class="btn btn-green" href="tel:+79687274708">Забронировать по телефону</a>
       </div>
       <div>
@@ -342,9 +343,9 @@ footer a{color:var(--muted)}
         <p>Быстрее всего — позвонить: администратор сразу скажет, какое время свободно.</p>
         <a class="tel" href="tel:+79687274708">8 (968) 727-47-08</a>
         <ul>
-          <li>по телефону, круглосуточно;</li>
-          <li>через заявку на сайте — мы перезвоним;</li>
-          <li>на месте у администратора.</li>
+          <li>по телефону, круглосуточно</li>
+          <li>через заявку на сайте — мы перезвоним</li>
+          <li>на месте у администратора</li>
         </ul>
       </div>
       <form class="book" id="bookForm" novalidate>
