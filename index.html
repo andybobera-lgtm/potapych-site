@@ -168,10 +168,10 @@ footer a{color:var(--muted)}
   .banner img{height:480px}
   .tiles{margin-top:16px;gap:12px}
   .tile img{height:140px}
-  .quick{grid-template-columns:1fr;gap:10px}
-  .zones,.price-wrap,.book-wrap,.contact-wrap{grid-template-columns:1fr}
+  .quick{grid-template-columns:minmax(0,1fr);gap:10px}
+  .zones,.price-wrap,.book-wrap,.contact-wrap{grid-template-columns:minmax(0,1fr)}
   .gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
-  .panel-olive ul{grid-template-columns:1fr}
+  .panel-olive ul{grid-template-columns:minmax(0,1fr)}
 }
 @media (max-width:600px){
   .banner-text{padding-bottom:24px}
@@ -188,13 +188,15 @@ footer a{color:var(--muted)}
   .banner h1{font-size:34px}
   .banner p{font-size:16px;margin-top:12px}
   .banner .btns .btn{flex:1 1 100%}
-  .tiles{grid-template-columns:1fr}
+  .tiles{grid-template-columns:minmax(0,1fr)}
+  .price-main{padding:20px}
+  .price-main .sum{font-size:42px}
   .tile img{height:170px}
   .section{padding-top:52px}
   .panel{padding:18px}
   .panel-sage{font-size:17px}
   .zone img{height:210px}
-  form.book{grid-template-columns:1fr;padding:18px}
+  form.book{grid-template-columns:minmax(0,1fr);padding:18px}
   .book-info .tel{font-size:30px}
   .reviews-frame{height:520px}
   .contact-wrap .btns{max-width:none}
