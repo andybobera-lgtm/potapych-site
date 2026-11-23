@@ -73,7 +73,7 @@ p{margin:0}
 .steam span:nth-child(3){left:62%;animation-delay:-15s;animation-duration:24s}
 @keyframes rise{0%{transform:translateY(0) scale(.8);opacity:0}15%{opacity:1}100%{transform:translateY(-130vh) scale(1.25);opacity:0}}
 .hero-inner{padding-top:120px;padding-bottom:64px;width:100%}
-.hero h1{font-size:clamp(46px,7.4vw,104px);max-width:12ch}
+.hero h1{font-size:clamp(38px,7.4vw,104px);max-width:12ch}
 .hero-lead{margin-top:22px;font-size:clamp(18px,1.6vw,21px);max-width:34em;color:#E6D8C5}
 .hero-call{margin-top:40px;display:flex;flex-wrap:wrap;align-items:flex-end;gap:20px 40px}
 .big-phone{font-family:var(--display);font-size:clamp(36px,4.8vw,64px);line-height:1;color:var(--honey);text-decoration:none;border-bottom:2px solid rgba(226,166,83,.35);padding-bottom:6px}
@@ -136,7 +136,8 @@ dialog.viewer button{position:absolute;top:8px;right:8px;width:48px;height:48px;
 .booking-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:72px;align-items:start}
 .booking-grid .big-phone{display:inline-block;margin-top:32px}
 form.book{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 24px;background:var(--wood);border:1px solid var(--wood-3);border-radius:24px;padding:36px}
-.field{display:flex;flex-direction:column;gap:8px;font-size:15px;color:var(--muted)}
+.field{display:flex;flex-direction:column;gap:8px;font-size:15px;color:var(--muted);min-width:0}
+.field input,.field select{width:100%;min-width:0}
 .field input,.field select{font:inherit;font-size:17px;color:var(--milk);background:var(--wood-2);border:1px solid #4A3829;border-radius:12px;padding:13px 14px;min-height:50px;color-scheme:dark}
 .field input:focus,.field select:focus{border-color:var(--honey);outline:none;box-shadow:0 0 0 3px rgba(226,166,83,.25)}
 .consent{grid-column:1/-1;display:flex;gap:12px;align-items:flex-start;font-size:14px;color:var(--muted)}
@@ -186,6 +187,55 @@ footer a{color:var(--muted)}
   .wrap{padding:0 20px}
   .included{grid-template-columns:1fr}
   .facts{gap:10px 28px}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .top .wrap{height:60px;gap:12px}
+  .logo{font-size:26px}
+  .top .btn{min-height:42px;padding:0 16px;font-size:14px}
+  .hero{min-height:auto}
+  .hero-inner{padding-top:72px;padding-bottom:40px}
+  .hero-lead{margin-top:16px;font-size:17px}
+  .hero-call{margin-top:28px;gap:16px}
+  .hero-call .btn{width:100%}
+  .big-phone{font-size:34px}
+  .facts{margin-top:32px;display:grid;grid-template-columns:1fr 1fr;gap:14px 16px;font-size:14px;line-height:1.35}
+  .facts li:last-child{grid-column:1/-1}
+  .facts b{display:block;font-size:17px}
+  .section{padding:64px 0}
+  .section-head{margin-bottom:32px}
+  .section-head p{font-size:16px}
+  .rooms{gap:56px}
+  .room{gap:20px}
+  .room-photo{border-radius:18px}
+  .room:nth-child(even) .room-photo{border-radius:18px}
+  .room-text p{font-size:16px;margin-top:10px}
+  .room-specs{margin-top:16px}
+  .room-specs li{font-size:14px;padding:5px 12px}
+  .price-grid,.reviews-grid,.booking-grid,.contacts-grid{gap:32px}
+  .included{margin-top:24px}
+  .example{font-size:16px}
+  .extras div{padding:13px 0}
+  .gallery{gap:8px;grid-auto-rows:130px}
+  .gallery button{border-radius:10px}
+  .rating{font-size:72px}
+  .reviews-frame{height:520px}
+  form.book{padding:20px;gap:16px;border-radius:18px}
+  .booking-grid .big-phone{margin-top:24px}
+  .faq summary{font-size:17px;padding:20px 40px 20px 0}
+  .faq details p{padding-bottom:20px}
+  .contacts-grid address{font-size:18px}
+  .contacts-actions{display:grid;grid-template-columns:1fr 1fr}
+  .contacts-actions .btn{padding:0 10px}
+  .map{min-height:320px}
+  footer .wrap{flex-direction:column}
+}
+@media (max-width:380px){
+  .wrap{padding:0 16px}
+  .top .btn{padding:0 12px;font-size:13px}
+  .logo{font-size:23px}
+  .big-phone{font-size:30px}
+  .contacts-actions{grid-template-columns:1fr}
 }
 @media (prefers-reduced-motion:reduce){
   .steam{display:none}
@@ -280,7 +330,7 @@ footer a{color:var(--muted)}
     <div>
       <h2 class="visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Цена</h2>
       <p class="price-big"><span class="nowrap">от 2000&nbsp;₽</span><span>в час за весь комплекс для компании до 6 человек</span></p>
-      <p class="example">Например, 3 часа впятером — 6000 ₽, то есть 1200 ₽ с человека.</p>
+      <p class="example">Например, 3&nbsp;часа впятером — 6000&nbsp;₽, то есть 1200&nbsp;₽ с&nbsp;человека.</p>
       <ul class="included">
         <li>Финская парная</li>
         <li>Бассейн</li>
@@ -289,7 +339,7 @@ footer a{color:var(--muted)}
         <li>Банкетный зал</li>
         <li>Две комнаты отдыха</li>
       </ul>
-      <p class="note muted">Каждый гость сверх шести — 100 ₽. Со своей едой и напитками можно: разовый сбор 100 ₽ за компанию.</p>
+      <p class="note muted">Каждый гость сверх шести — 100&nbsp;₽. Со своей едой и напитками можно: разовый сбор 100&nbsp;₽ за компанию.</p>
     </div>
     <div class="extras">
       <h3>Можно взять на месте</h3>
@@ -349,7 +399,7 @@ footer a{color:var(--muted)}
         <select name="hours"><option>2 часа</option><option>3 часа</option><option selected>4 часа</option><option>5 часов и больше</option><option>На всю ночь</option></select>
       </label>
       <label class="field">Сколько гостей<input type="number" name="guests" min="1" max="30" inputmode="numeric"></label>
-      <label class="consent"><input type="checkbox" name="consent" required>Согласен на обработку персональных данных по <a href="#">политике конфиденциальности</a></label>
+      <label class="consent"><input type="checkbox" name="consent" required><span>Согласен на обработку персональных данных по <a href="#">политике конфиденциальности</a></span></label>
       <button class="btn btn-honey" type="submit">Отправить заявку</button>
       <p class="form-msg" id="formMsg" role="status"></p>
     </form>
