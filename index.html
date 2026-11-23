@@ -3,245 +3,418 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Сауна «Потапыч» на Шаболовке — круглосуточно, от 2000 ₽/час</title>
-<meta name="description" content="Сауна для вашей компании у м. Шаболовская: финская парная, бассейн, джакузи, караоке, бильярд. Круглосуточно. Бронь: 8 (968) 727-47-08.">
+<title>Сауна «Потапыч» на Шаболовке — круглосуточно, от 2000 ₽ в час</title>
+<meta name="description" content="Сауна только для вашей компании у м. Шаболовская: финская парная, бассейн, джакузи, караоке и бильярд. Круглосуточно. Бронь: 8 (968) 727-47-08.">
+<meta property="og:title" content="Сауна «Потапыч» на Шаболовке">
+<meta property="og:description" content="Парная, бассейн, джакузи и караоке — весь комплекс только для вашей компании. Круглосуточно, от 2000 ₽ в час.">
+<meta property="og:image" content="https://sauna-shabolovka.ru/img/sauna_shabolovka_821.jpg">
+<meta name="theme-color" content="#1F1712">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231F1712'/%3E%3Ctext x='32' y='45' font-family='Georgia' font-size='38' text-anchor='middle' fill='%23E2A653'%3EП%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-body{margin:0;background:#11140F}
-a{color:#E3C9A0}a:hover{color:#F5E3C4}
-input,select{font-family:Manrope,system-ui,sans-serif}
+:root{
+  --wood:#1F1712;      /* тёмное дерево — фон */
+  --wood-2:#2A1F18;    /* светлее — второй слой */
+  --wood-3:#3A2B21;    /* линии и рамки */
+  --honey:#E2A653;     /* мёд — кнопки */
+  --honey-dark:#C98A36;
+  --pool:#5CC2B8;      /* бирюза бассейна — мелкие акценты */
+  --milk:#F4E9DA;      /* текст */
+  --muted:#BFAE9A;     /* второстепенный текст */
+  --display:'Yeseva One', Georgia, serif;
+  --body:'Onest', system-ui, sans-serif;
+  --wrap:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--wood);color:var(--milk);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:var(--pool)}
+a:hover{color:#8EDCD3}
+:focus-visible{outline:3px solid var(--honey);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.08;margin:0;letter-spacing:.005em}
+h2{font-size:clamp(34px,4.6vw,56px)}
+h3{font-size:clamp(26px,2.6vw,34px)}
+p{margin:0}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 28px}
+.muted{color:var(--muted)}
+
+/* Кнопки */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 28px;border-radius:999px;font-weight:600;font-size:16px;text-decoration:none;border:0;cursor:pointer;font-family:var(--body);transition:background .2s,color .2s,border-color .2s}
+.btn-honey{background:var(--honey);color:#24180C}
+.btn-honey:hover{background:#EDB66A;color:#24180C}
+.btn-line{border:1.5px solid #6B5644;color:var(--milk);background:transparent}
+.btn-line:hover{border-color:var(--honey);color:var(--milk)}
+
+/* Шапка */
+.top{position:sticky;top:0;z-index:20;background:rgba(31,23,18,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--wood-3)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:72px}
+.logo{font-family:var(--display);font-size:30px;color:var(--milk);text-decoration:none;line-height:1}
+.logo:hover{color:var(--honey)}
+.nav{display:flex;gap:28px}
+.nav a{color:var(--muted);text-decoration:none;font-size:15px}
+.nav a:hover{color:var(--milk)}
+.top-phone{color:var(--milk);text-decoration:none;font-weight:600;white-space:nowrap}
+.top-phone:hover{color:var(--honey)}
+
+/* Первый экран */
+.hero{position:relative;min-height:calc(100vh - 72px);min-height:calc(100svh - 72px);display:flex;align-items:flex-end;overflow:hidden;isolation:isolate}
+.hero-photo{position:absolute;inset:0;z-index:-3;width:100%;height:100%;object-fit:cover;filter:saturate(1.05) contrast(1.05)}
+.hero::before{content:"";position:absolute;inset:0;z-index:-2;background:
+  linear-gradient(180deg,rgba(31,23,18,.35) 0%,rgba(31,23,18,.55) 45%,rgba(31,23,18,.97) 92%),
+  linear-gradient(90deg,rgba(31,23,18,.75) 0%,rgba(31,23,18,0) 65%)}
+.steam{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.steam span{position:absolute;bottom:-30%;width:46vw;height:46vw;max-width:620px;max-height:620px;border-radius:50%;
+  background:radial-gradient(circle,rgba(244,233,218,.16) 0%,rgba(244,233,218,0) 65%);filter:blur(30px);animation:rise 22s linear infinite}
+.steam span:nth-child(1){left:-6%;animation-delay:0s}
+.steam span:nth-child(2){left:30%;animation-delay:-8s;animation-duration:26s}
+.steam span:nth-child(3){left:62%;animation-delay:-15s;animation-duration:24s}
+@keyframes rise{0%{transform:translateY(0) scale(.8);opacity:0}15%{opacity:1}100%{transform:translateY(-130vh) scale(1.25);opacity:0}}
+.hero-inner{padding-top:120px;padding-bottom:64px;width:100%}
+.hero h1{font-size:clamp(46px,7.4vw,104px);max-width:12ch}
+.hero-lead{margin-top:22px;font-size:clamp(18px,1.6vw,21px);max-width:34em;color:#E6D8C5}
+.hero-call{margin-top:40px;display:flex;flex-wrap:wrap;align-items:flex-end;gap:20px 40px}
+.big-phone{font-family:var(--display);font-size:clamp(36px,4.8vw,64px);line-height:1;color:var(--honey);text-decoration:none;border-bottom:2px solid rgba(226,166,83,.35);padding-bottom:6px}
+.big-phone:hover{color:#F2BE77;border-color:var(--honey)}
+.big-phone small{display:block;font-family:var(--body);font-size:14px;color:var(--muted);margin-bottom:10px;letter-spacing:.01em}
+.facts{margin:48px 0 0;padding:22px 0 0;border-top:1px solid rgba(191,174,154,.25);list-style:none;display:flex;flex-wrap:wrap;gap:12px 48px;color:#E6D8C5;font-size:16px}
+.facts b{color:var(--milk);font-weight:600}
+
+/* Пространства — чередующиеся строки */
+.section{padding:120px 0}
+.section-head{max-width:640px;margin-bottom:64px}
+.section-head p{margin-top:18px;font-size:18px}
+.rooms{display:flex;flex-direction:column;gap:96px}
+.room{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:64px;align-items:center}
+.room:nth-child(even) .room-photo{order:2}
+.room-photo{border-radius:28px 28px 28px 4px;overflow:hidden;aspect-ratio:5/4;background:var(--wood-2)}
+.room:nth-child(even) .room-photo{border-radius:28px 28px 4px 28px}
+.room-photo img{width:100%;height:100%;object-fit:cover}
+.room-text p{margin-top:16px;color:var(--muted);font-size:18px;max-width:30em}
+.room-specs{margin:24px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:10px}
+.room-specs li{border:1px solid var(--wood-3);border-radius:999px;padding:6px 16px;font-size:15px;color:var(--milk)}
+
+/* Цена */
+.price{background:var(--wood-2)}
+.price-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:72px;align-items:start}
+.price-big{font-family:var(--display);font-size:clamp(64px,9vw,128px);line-height:.95;color:var(--honey)}
+.price-big span{display:block;font-family:var(--body);font-size:20px;color:var(--milk);margin-top:16px;line-height:1.4}
+.included{margin:36px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 24px}
+.included li{padding-left:28px;position:relative}
+.included li::before{content:"";position:absolute;left:0;top:.55em;width:14px;height:8px;border-left:2px solid var(--pool);border-bottom:2px solid var(--pool);transform:rotate(-45deg)}
+.extras h3{margin-bottom:12px}
+.extras dl{margin:0}
+.extras div{display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1px solid var(--wood-3)}
+.extras dt{color:var(--milk)}
+.extras dd{margin:0;font-weight:600;white-space:nowrap}
+.extras .ask{color:var(--muted);font-weight:400}
+.note{margin-top:20px;font-size:15px}
+
+/* Галерея */
+.gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:220px;gap:12px}
+.gallery button{padding:0;border:0;background:var(--wood-2);border-radius:14px;overflow:hidden;cursor:zoom-in}
+.gallery button:nth-child(1){grid-column:span 2;grid-row:span 2}
+.gallery button:nth-child(6){grid-column:span 2}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.gallery button:hover img{transform:scale(1.04)}
+dialog.viewer{border:0;padding:0;background:transparent;max-width:min(1100px,94vw)}
+dialog.viewer::backdrop{background:rgba(15,10,7,.92)}
+dialog.viewer img{max-height:84vh;width:auto;margin:0 auto;border-radius:12px}
+dialog.viewer button{position:absolute;top:8px;right:8px;width:48px;height:48px;border-radius:50%;border:0;background:var(--honey);color:#24180C;font-size:26px;cursor:pointer;line-height:1}
+
+/* Отзывы */
+.reviews-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:64px;align-items:start}
+.rating{font-family:var(--display);font-size:96px;line-height:1;color:var(--honey)}
+.reviews-frame{width:100%;height:640px;border:0;border-radius:18px;background:#fff}
+
+/* Бронь */
+.booking{background:linear-gradient(180deg,var(--wood-2),var(--wood))}
+.booking-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:72px;align-items:start}
+.booking-grid .big-phone{display:inline-block;margin-top:32px}
+form.book{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 24px;background:var(--wood);border:1px solid var(--wood-3);border-radius:24px;padding:36px}
+.field{display:flex;flex-direction:column;gap:8px;font-size:15px;color:var(--muted)}
+.field input,.field select{font:inherit;font-size:17px;color:var(--milk);background:var(--wood-2);border:1px solid #4A3829;border-radius:12px;padding:13px 14px;min-height:50px;color-scheme:dark}
+.field input:focus,.field select:focus{border-color:var(--honey);outline:none;box-shadow:0 0 0 3px rgba(226,166,83,.25)}
+.consent{grid-column:1/-1;display:flex;gap:12px;align-items:flex-start;font-size:14px;color:var(--muted)}
+.consent input{width:20px;height:20px;accent-color:var(--honey);margin-top:2px;flex:none}
+form.book .btn{grid-column:1/-1}
+.form-msg{grid-column:1/-1;font-size:15px;color:var(--pool);min-height:1.2em}
+
+/* Вопросы */
+.faq{max-width:820px}
+.faq details{border-bottom:1px solid var(--wood-3)}
+.faq summary{list-style:none;cursor:pointer;padding:26px 48px 26px 0;position:relative;font-size:20px;font-weight:600}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";position:absolute;right:8px;top:50%;width:12px;height:12px;border-right:2px solid var(--honey);border-bottom:2px solid var(--honey);transform:translateY(-70%) rotate(45deg);transition:transform .25s}
+.faq details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
+.faq details p{padding:0 0 26px;color:var(--muted);max-width:36em}
+
+/* Контакты */
+.contacts-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:56px;align-items:stretch}
+.contacts-grid address{font-style:normal;font-size:20px;margin-top:24px}
+.metro{margin-top:12px;color:var(--muted)}
+.contacts-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.map{width:100%;min-height:440px;height:100%;border:0;border-radius:24px;background:var(--wood-2)}
+
+footer{border-top:1px solid var(--wood-3);padding:32px 0 40px;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+footer a{color:var(--muted)}
+
+/* Нижняя панель на телефоне */
+.callbar{display:none}
+
+@media (max-width:900px){
+  .nav{display:none}
+  .room,.price-grid,.reviews-grid,.booking-grid,.contacts-grid{grid-template-columns:1fr;gap:36px}
+  .room:nth-child(even) .room-photo{order:0}
+  .rooms{gap:72px}
+  .section{padding:88px 0}
+  .gallery{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:160px}
+  .gallery button:nth-child(6){grid-column:span 1}
+  form.book{grid-template-columns:1fr;padding:24px}
+  .reviews-frame{height:560px}
+  .callbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:30;gap:10px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(31,23,18,.96);border-top:1px solid var(--wood-3)}
+  .callbar .btn{flex:1;min-height:50px;padding:0 12px}
+  body{padding-bottom:76px}
+  .top-phone{display:none}
+}
+@media (max-width:520px){
+  .wrap{padding:0 20px}
+  .included{grid-template-columns:1fr}
+  .facts{gap:10px 28px}
+}
+@media (prefers-reduced-motion:reduce){
+  .steam{display:none}
+  html{scroll-behavior:auto}
+  .gallery img{transition:none}
+}
 </style>
-<style>html{scroll-behavior:smooth}@media (max-width:640px){h1{font-size:44px!important}h2{font-size:36px!important}}</style>
 </head>
 <body>
-<div style="font-family: Manrope, system-ui, sans-serif; color: #EFE8DC; background: #11140F; min-height: 100vh">
 
-<header style="position: sticky; top: 0; z-index: 10; background: rgba(17,20,15,0.92); border-bottom: 1px solid #262B22">
-<div style="max-width: 1280px; margin: 0 auto; padding: 14px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px">
-<a href="#top" style="text-decoration: none; color: #EFE8DC; display: flex; flex-direction: column; line-height: 1">
-<span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 30px; font-weight: 700; letter-spacing: 0.14em">ПОТАПЫЧ</span>
-<span style="font-size: 11px; letter-spacing: 0.3em; color: #A9A08F; padding-top: 4px">САУНА НА ШАБОЛОВКЕ</span>
-</a>
-<nav aria-label="Разделы" style="display: flex; flex-wrap: wrap; gap: 28px; font-size: 14px; letter-spacing: 0.04em">
-<a href="#spaces" style="color: #D5CCBC; text-decoration: none">Пространства</a>
-<a href="#formats" style="color: #D5CCBC; text-decoration: none">Форматы</a>
-<a href="#prices" style="color: #D5CCBC; text-decoration: none">Цены</a>
-<a href="#faq" style="color: #D5CCBC; text-decoration: none">Вопросы</a>
-<a href="#contacts" style="color: #D5CCBC; text-decoration: none">Контакты</a>
-</nav>
-<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 18px">
-<a href="tel:+79687274708" style="color: #EFE8DC; text-decoration: none; font-weight: 600">8 (968) 727-47-08</a>
-<a href="#booking" style="background: #D9B27C; color: #15110B; text-decoration: none; font-weight: 700; padding: 12px 22px; border-radius: 999px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; font-size: 14px; letter-spacing: 0.04em">Забронировать</a>
-</div>
-</div>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#">Потапыч</a>
+    <nav class="nav" aria-label="Разделы">
+      <a href="#inside">Что внутри</a>
+      <a href="#price">Цена</a>
+      <a href="#photos">Фото</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#contacts">Как добраться</a>
+    </nav>
+    <a class="top-phone" href="tel:+79687274708">8 (968) 727-47-08</a>
+    <a class="btn btn-honey" href="#booking">Забронировать</a>
+  </div>
 </header>
 
-<section id="top" style="position: relative; min-height: 760px; display: flex; align-items: flex-end; background: #1B2017; overflow: hidden">
-<img src="https://sauna-shabolovka.ru/img/sauna_shabolovka_821.jpg" alt="Бассейн сауны «Потапыч»" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.55">
-<div style="position: relative; width: 100%; background: linear-gradient(0deg, rgba(17,20,15,0.96) 0%, rgba(17,20,15,0.55) 70%, rgba(17,20,15,0) 100%)">
-<div style="max-width: 1280px; margin: 0 auto; padding: 160px 32px 64px; display: flex; flex-direction: column; gap: 28px">
-<h1 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 76px; line-height: 1.0; font-weight: 600; max-width: 860px">Сауна только для своих — в центре Москвы</h1>
-<p style="margin: 0; font-size: 19px; line-height: 1.6; color: #D5CCBC; max-width: 600px">Финский жар, большой бассейн и тёплая компания. Весь комплекс — только ваш, днём и ночью.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 14px">
-<a href="#booking" style="background: #D9B27C; color: #15110B; text-decoration: none; font-weight: 700; padding: 18px 32px; border-radius: 999px; font-size: 16px">Забронировать сауну</a>
-<a href="#spaces" style="border: 1px solid #5B6150; color: #EFE8DC; text-decoration: none; font-weight: 600; padding: 18px 32px; border-radius: 999px; font-size: 16px">Смотреть пространства</a>
-</div>
-<div style="display: flex; flex-wrap: wrap; gap: 56px; padding-top: 28px; border-top: 1px solid #2F3529">
-<div style="display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 52px; font-weight: 600; line-height: 1">24/7</span><span style="color: #A9A08F; font-size: 14px">работаем круглосуточно</span></div>
-<div style="display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 52px; font-weight: 600; line-height: 1">1</span><span style="color: #A9A08F; font-size: 14px">компания за раз — без чужих</span></div>
-<div style="display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 52px; font-weight: 600; line-height: 1">4,5</span><span style="color: #A9A08F; font-size: 14px">рейтинг на Яндекс Картах</span></div>
-<div style="display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 52px; font-weight: 600; line-height: 1">3</span><span style="color: #A9A08F; font-size: 14px">станции метро рядом</span></div>
-</div>
-</div>
-</div>
+<main>
+<section class="hero">
+  <img class="hero-photo" src="https://sauna-shabolovka.ru/img/sauna_shabolovka_821.jpg" alt="" fetchpriority="high">
+  <div class="steam" aria-hidden="true"><span></span><span></span><span></span></div>
+  <div class="wrap hero-inner">
+    <h1>Своя сауна на&nbsp;Шаболовке</h1>
+    <p class="hero-lead">Парная, бассейн, джакузи и караоке — весь комплекс только для вашей компании. Без соседей за стенкой, днём и ночью.</p>
+    <div class="hero-call">
+      <a class="big-phone" href="tel:+79687274708"><small>Бронь по телефону, круглосуточно</small>8 968 727-47-08</a>
+      <a class="btn btn-line" href="#booking">Оставить заявку</a>
+    </div>
+    <ul class="facts">
+      <li><b>от 2000 ₽</b> в час за весь комплекс</li>
+      <li><b>24/7</b> без выходных</li>
+      <li><b>4,5</b> на Яндекс Картах</li>
+      <li>Шаболовская, Тульская, Ленинский проспект</li>
+    </ul>
+  </div>
 </section>
 
-<section style="padding: 96px 32px">
-<div style="max-width: 1280px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px">
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px">
-<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 52px; font-weight: 600">Сейчас у нас</h2>
-<a href="#booking" style="color: #E3C9A0; font-size: 15px">Все предложения</a>
-</div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px">
-<div style="background: #1A1E16; border-radius: 4px; overflow: hidden; display: flex; flex-direction: column">
-<img src="https://sauna-shabolovka.ru/img/sauna_shabolovka_516.jpg" alt="Джакузи в банкетном зале" loading="lazy" style="height: 220px; width: 100%; object-fit: cover; display: block">
-<div style="padding: 24px; display: flex; flex-direction: column; gap: 10px"><span style="font-size: 12px; letter-spacing: 0.2em; color: #D9B27C">АКЦИЯ</span><h3 style="margin: 0; font-size: 20px; font-weight: 600">[Название акции]</h3><p style="margin: 0; color: #A9A08F; line-height: 1.55">[Условия — уточнить у владельца]</p></div>
-</div>
-<div style="background: #1A1E16; border-radius: 4px; overflow: hidden; display: flex; flex-direction: column">
-<img src="https://sauna-shabolovka.ru/img/sauna_shabolovka_813.jpg" alt="Банкетный зал с телевизором" loading="lazy" style="height: 220px; width: 100%; object-fit: cover; display: block">
-<div style="padding: 24px; display: flex; flex-direction: column; gap: 10px"><span style="font-size: 12px; letter-spacing: 0.2em; color: #D9B27C">ПРАЗДНИК</span><h3 style="margin: 0; font-size: 20px; font-weight: 600">День рождения в сауне</h3><p style="margin: 0; color: #A9A08F; line-height: 1.55">Банкетный зал, караоке и бильярд — для вашей компании.</p></div>
-</div>
-<div style="background: #1A1E16; border-radius: 4px; overflow: hidden; display: flex; flex-direction: column">
-<img src="https://sauna-shabolovka.ru/img/sauna_shabolovka_815.jpg" alt="Декор в сауне" loading="lazy" style="height: 220px; width: 100%; object-fit: cover; display: block">
-<div style="padding: 24px; display: flex; flex-direction: column; gap: 10px"><span style="font-size: 12px; letter-spacing: 0.2em; color: #D9B27C">ПОДАРОК</span><h3 style="margin: 0; font-size: 20px; font-weight: 600">[Подарочный сертификат — если есть]</h3><p style="margin: 0; color: #A9A08F; line-height: 1.55">[Номиналы — уточнить у владельца]</p></div>
-</div>
-</div>
-</div>
+<section class="section" id="inside">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Что внутри</h2>
+      <p class="muted">Всё ниже входит в аренду. Доплачивать за бассейн, джакузи или караоке не нужно.</p>
+    </div>
+    <div class="rooms">
+      <article class="room">
+        <div class="room-photo"><img src="https://sauna-shabolovka.ru/img/sauna_shabolovka_521.jpg" alt="Финская парная с деревянными полками" loading="lazy"></div>
+        <div class="room-text">
+          <h3>Финская парная</h3>
+          <p>Сухой ровный жар. Можно попросить эфирное масло или травяной мешочек — и пар заиграет по-новому.</p>
+          <ul class="room-specs"><li>до 5 человек</li><li>сухой пар</li></ul>
+        </div>
+      </article>
+      <article class="room">
+        <div class="room-photo"><img src="https://sauna-shabolovka.ru/img/sauna_shabolovka_524.jpg" alt="Бассейн с бирюзовой водой" loading="lazy"></div>
+        <div class="room-text">
+          <h3>Бассейн</h3>
+          <p>После парной — в прохладную воду. Бассейн такой, что в нём можно не только окунуться, но и проплыть пару раз туда и обратно.</p>
+          <ul class="room-specs"><li>вода постоянно фильтруется</li><li>[размер уточнить]</li></ul>
+        </div>
+      </article>
+      <article class="room">
+        <div class="room-photo"><img src="https://sauna-shabolovka.ru/img/sauna_shabolovka_807.jpg" alt="Банкетный зал с диваном и столом" loading="lazy"></div>
+        <div class="room-text">
+          <h3>Банкетный зал</h3>
+          <p>Большой стол для всей компании, караоке, бильярд и телевизор. Домашнюю кухню, чай и кальян можно заказать на месте.</p>
+          <ul class="room-specs"><li>караоке</li><li>бильярд</li><li>кондиционер</li></ul>
+        </div>
+      </article>
+      <article class="room">
+        <div class="room-photo"><img src="https://sauna-shabolovka.ru/img/sauna_shabolovka_516.jpg" alt="Джакузи с гидромассажем" loading="lazy"></div>
+        <div class="room-text">
+          <h3>Джакузи и отдых</h3>
+          <p>Джакузи с гидромассажем, массажное кресло и две комнаты отдыха с двуспальными кроватями — чтобы спокойно полежать между заходами.</p>
+          <ul class="room-specs"><li>гидромассаж</li><li>2 комнаты отдыха</li></ul>
+        </div>
+      </article>
+    </div>
+  </div>
 </section>
 
-<section style="background: #171B13; padding: 96px 32px">
-<div style="max-width: 1280px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 64px">
-<div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
-<span style="font-size: 12px; letter-spacing: 0.3em; color: #D9B27C">О САУНЕ</span>
-<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 48px; font-weight: 600; line-height: 1.1">Тихое место, где можно выдохнуть</h2>
-<p style="margin: 0; color: #D5CCBC; font-size: 17px; line-height: 1.7">«Потапыч» — уютная сауна у Шаболовки. Вы бронируете весь комплекс целиком: парную, бассейн, банкетный зал и комнаты отдыха. Никаких соседей за стенкой и чужих компаний — только вы и ваши люди.</p>
-</div>
-<div style="flex: 1 1 520px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px">
-<div style="display: flex; flex-direction: column; gap: 12px">
-<svg aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#D9B27C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3c0 2-2 3-2 5s2 3 2 5"></path><path d="M12 3c0 2-2 3-2 5s2 3 2 5"></path><path d="M16 3c0 2-2 3-2 5s2 3 2 5"></path><path d="M3 18h18"></path></svg>
-<h3 style="margin: 0; font-size: 18px; font-weight: 600">Финский жар</h3><p style="margin: 0; color: #A9A08F; line-height: 1.6">Сухая парная на 4–5 человек.</p></div>
-<div style="display: flex; flex-direction: column; gap: 12px">
-<svg aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#D9B27C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 16c2 0 2-1.5 4-1.5S8 16 10 16s2-1.5 4-1.5 2 1.5 4 1.5 2-1.5 4-1.5"></path><path d="M2 20c2 0 2-1.5 4-1.5S8 20 10 20s2-1.5 4-1.5 2 1.5 4 1.5 2-1.5 4-1.5"></path><path d="M7 12V5a2 2 0 0 1 4 0"></path><path d="M15 12V5a2 2 0 0 1 4 0"></path></svg>
-<h3 style="margin: 0; font-size: 18px; font-weight: 600">Чистая вода</h3><p style="margin: 0; color: #A9A08F; line-height: 1.6">Вода в бассейне постоянно фильтруется и обеззараживается.</p></div>
-<div style="display: flex; flex-direction: column; gap: 12px">
-<svg aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#D9B27C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
-<h3 style="margin: 0; font-size: 18px; font-weight: 600">Днём и ночью</h3><p style="margin: 0; color: #A9A08F; line-height: 1.6">Работаем круглосуточно, без выходных.</p></div>
-<div style="display: flex; flex-direction: column; gap: 12px">
-<svg aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#D9B27C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>
-<h3 style="margin: 0; font-size: 18px; font-weight: 600">Удобно добраться</h3><p style="margin: 0; color: #A9A08F; line-height: 1.6">Шаболовская, Тульская, Ленинский проспект. Парковка у входа.</p></div>
-</div>
-</div>
+<section class="section price" id="price">
+  <div class="wrap price-grid">
+    <div>
+      <h2 class="visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Цена</h2>
+      <p class="price-big">от 2000 ₽<span>в час за весь комплекс — на любое количество часов</span></p>
+      <ul class="included">
+        <li>Финская парная</li>
+        <li>Бассейн</li>
+        <li>Джакузи</li>
+        <li>Караоке и бильярд</li>
+        <li>Банкетный зал</li>
+        <li>Две комнаты отдыха</li>
+      </ul>
+      <p class="note muted">[Цена в выходные и ночью — уточнить у владельца]</p>
+    </div>
+    <div class="extras">
+      <h3>Можно взять на месте</h3>
+      <dl>
+        <div><dt>Полотенце</dt><dd>150 ₽</dd></div>
+        <div><dt>Простыня</dt><dd>150 ₽</dd></div>
+        <div><dt>Веник</dt><dd class="ask">[цена]</dd></div>
+        <div><dt>Халат и тапочки</dt><dd class="ask">[цена]</dd></div>
+        <div><dt>Травяной мешочек, эфирное масло</dt><dd class="ask">[цена]</dd></div>
+        <div><dt>Кальян</dt><dd class="ask">[цена]</dd></div>
+      </dl>
+    </div>
+  </div>
 </section>
 
-<section id="spaces" style="padding: 96px 32px">
-<div style="max-width: 1280px; margin: 0 auto; display: flex; flex-direction: column; gap: 48px">
-<div style="display: flex; flex-direction: column; gap: 12px">
-<span style="font-size: 12px; letter-spacing: 0.3em; color: #D9B27C">ПРОСТРАНСТВА</span>
-<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 52px; font-weight: 600">Всё это — ваше на время брони</h2>
-</div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 32px">
-
-<div style="display: flex; flex-direction: column; gap: 18px">
-<div style="position: relative">
-<img src="https://sauna-shabolovka.ru/img/sauna_shabolovka_521.jpg" alt="Финская парная" loading="lazy" style="height: 300px; width: 100%; object-fit: cover; border-radius: 4px; display: block">
-</div>
-<h3 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 32px; font-weight: 600">Финская парная</h3>
-<p style="margin: 0; color: #A9A08F; line-height: 1.6">Сухой, ровный жар. Добавьте эфирное масло или травяной мешочек — и пар заиграет по-новому.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 24px; font-size: 14px; color: #D5CCBC; border-top: 1px solid #262B22; padding-top: 14px"><span>до 5 человек</span><span>сухой жар</span><span>[площадь, м²]</span></div>
-</div>
-
-<div style="display: flex; flex-direction: column; gap: 18px">
-<div style="position: relative">
-<img src="https://sauna-shabolovka.ru/img/sauna_shabolovka_524.jpg" alt="Бассейн" loading="lazy" style="height: 300px; width: 100%; object-fit: cover; border-radius: 4px; display: block">
-</div>
-<h3 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 32px; font-weight: 600">Большой бассейн</h3>
-<p style="margin: 0; color: #A9A08F; line-height: 1.6">После парной — в прохладную воду. Здесь можно не просто окунуться, а поплавать.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 24px; font-size: 14px; color: #D5CCBC; border-top: 1px solid #262B22; padding-top: 14px"><span>[размер — уточнить: 2,5×5 или 4×4 м]</span><span>фильтрация воды</span></div>
-</div>
-
-<div style="display: flex; flex-direction: column; gap: 18px">
-<div style="position: relative">
-<img src="https://sauna-shabolovka.ru/img/sauna_shabolovka_807.jpg" alt="Банкетный зал" loading="lazy" style="height: 300px; width: 100%; object-fit: cover; border-radius: 4px; display: block">
-</div>
-<h3 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 32px; font-weight: 600">Банкетный зал</h3>
-<p style="margin: 0; color: #A9A08F; line-height: 1.6">Большой стол, джакузи с гидромассажем, массажное кресло, караоке и бильярд. Можно заказать домашнюю кухню, чай и кальян.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 24px; font-size: 14px; color: #D5CCBC; border-top: 1px solid #262B22; padding-top: 14px"><span>[вместимость]</span><span>джакузи</span><span>караоке</span></div>
-</div>
-
-<div style="display: flex; flex-direction: column; gap: 18px">
-<div style="position: relative">
-<img src="https://sauna-shabolovka.ru/img/sauna_shabolovka_819.jpg" alt="Зона отдыха" loading="lazy" style="height: 300px; width: 100%; object-fit: cover; border-radius: 4px; display: block">
-</div>
-<h3 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 32px; font-weight: 600">Комнаты отдыха</h3>
-<p style="margin: 0; color: #A9A08F; line-height: 1.6">Две отдельные комнаты с двуспальными кроватями — чтобы спокойно полежать между заходами.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 24px; font-size: 14px; color: #D5CCBC; border-top: 1px solid #262B22; padding-top: 14px"><span>2 комнаты</span><span>двуспальные кровати</span></div>
-</div>
-
-</div>
-</div>
+<section class="section" id="photos">
+  <div class="wrap">
+    <div class="section-head"><h2>Как здесь выглядит</h2></div>
+    <div class="gallery">
+      <button type="button" data-full="https://sauna-shabolovka.ru/img/sauna_shabolovka_803.jpg" aria-label="Открыть фото бассейна"><img src="https://sauna-shabolovka.ru/img/sauna_shabolovka_803.jpg" alt="Бассейн и декор" loading="lazy"></button>
+      <button type="button" data-full="https://sauna-shabolovka.ru/img/sauna_shabolovka_813.jpg" aria-label="Открыть фото банкетного зала"><img src="https://sauna-shabolovka.ru/img/sauna_shabolovka_813.jpg" alt="Банкетный зал с телевизором" loading="lazy"></button>
+      <button type="button" data-full="https://sauna-shabolovka.ru/img/sauna_shabolovka_808.jpg" aria-label="Открыть фото зала"><img src="https://sauna-shabolovka.ru/img/sauna_shabolovka_808.jpg" alt="Зал с аркой и окном" loading="lazy"></button>
+      <button type="button" data-full="https://sauna-shabolovka.ru/img/sauna_shabolovka_822.jpg" aria-label="Открыть фото бассейна"><img src="https://sauna-shabolovka.ru/img/sauna_shabolovka_822.jpg" alt="Угол бассейна" loading="lazy"></button>
+      <button type="button" data-full="https://sauna-shabolovka.ru/img/sauna_shabolovka_819.jpg" aria-label="Открыть фото зоны отдыха"><img src="https://sauna-shabolovka.ru/img/sauna_shabolovka_819.jpg" alt="Зона отдыха с подушками" loading="lazy"></button>
+      <button type="button" data-full="https://sauna-shabolovka.ru/img/sauna_shabolovka_812.jpg" aria-label="Открыть фото стола"><img src="https://sauna-shabolovka.ru/img/sauna_shabolovka_812.jpg" alt="Стол в банкетном зале" loading="lazy"></button>
+      <button type="button" data-full="https://sauna-shabolovka.ru/img/sauna_shabolovka_820.jpg" aria-label="Открыть фото входа в парную"><img src="https://sauna-shabolovka.ru/img/sauna_shabolovka_820.jpg" alt="Вход в парную" loading="lazy"></button>
+      <button type="button" data-full="https://sauna-shabolovka.ru/img/sauna_shabolovka_815.jpg" aria-label="Открыть фото декора"><img src="https://sauna-shabolovka.ru/img/sauna_shabolovka_815.jpg" alt="Декор с осенними листьями" loading="lazy"></button>
+    </div>
+  </div>
 </section>
 
-<section id="formats" style="background: #171B13; padding: 96px 32px">
-<div style="max-width: 1280px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px">
-<div style="display: flex; flex-direction: column; gap: 12px">
-<span style="font-size: 12px; letter-spacing: 0.3em; color: #D9B27C">ФОРМАТЫ</span>
-<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 52px; font-weight: 600">С кем и зачем приходят</h2>
-</div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1px; background: #262B22">
-<div style="background: #171B13; padding: 32px; display: flex; flex-direction: column; gap: 10px"><h3 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 28px; font-weight: 600">Друзья</h3><p style="margin: 0; color: #A9A08F; line-height: 1.6">Пар, бильярд и караоке до утра.</p></div>
-<div style="background: #171B13; padding: 32px; display: flex; flex-direction: column; gap: 10px"><h3 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 28px; font-weight: 600">День рождения</h3><p style="margin: 0; color: #A9A08F; line-height: 1.6">Банкетный зал и домашняя кухня по заказу.</p></div>
-<div style="background: #171B13; padding: 32px; display: flex; flex-direction: column; gap: 10px"><h3 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 28px; font-weight: 600">Вдвоём</h3><p style="margin: 0; color: #A9A08F; line-height: 1.6">Джакузи, тишина и комната отдыха.</p></div>
-<div style="background: #171B13; padding: 32px; display: flex; flex-direction: column; gap: 10px"><h3 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 28px; font-weight: 600">Коллеги</h3><p style="margin: 0; color: #A9A08F; line-height: 1.6">Неформальная встреча после работы.</p></div>
-</div>
-</div>
+<section class="section" id="reviews">
+  <div class="wrap reviews-grid">
+    <div>
+      <h2>Что говорят гости</h2>
+      <p class="rating" style="margin-top:32px">4,5</p>
+      <p class="muted" style="margin-top:8px">средняя оценка на Яндекс Картах по 168 оценкам</p>
+      <a class="btn btn-line" style="margin-top:32px" href="https://yandex.ru/maps/org/95482074411/reviews/" target="_blank" rel="noopener">Все отзывы на Яндекс Картах</a>
+    </div>
+    <iframe class="reviews-frame" src="https://yandex.ru/maps-reviews-widget/95482074411?comments" title="Отзывы о сауне на Яндекс Картах" loading="lazy"></iframe>
+  </div>
 </section>
 
-<section id="prices" style="padding: 96px 32px">
-<div style="max-width: 1280px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 64px; align-items: flex-start">
-<div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
-<span style="font-size: 12px; letter-spacing: 0.3em; color: #D9B27C">ЦЕНЫ</span>
-<p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 80px; font-weight: 600; line-height: 1">от 2000 ₽</p>
-<p style="margin: 0; color: #D5CCBC; font-size: 18px">в час за весь комплекс</p>
-<p style="margin: 0; color: #A9A08F; line-height: 1.6">Парная, бассейн, джакузи, караоке, бильярд и комнаты отдыха — уже в цене.</p>
-<p style="margin: 0; color: #8C8473; font-size: 14px">[Цены в выходные и ночью — уточнить у владельца]</p>
-</div>
-<div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column">
-<div style="display: flex; justify-content: space-between; gap: 16px; padding: 18px 0; border-bottom: 1px solid #262B22"><span>Полотенце</span><span style="font-weight: 600">150 ₽</span></div>
-<div style="display: flex; justify-content: space-between; gap: 16px; padding: 18px 0; border-bottom: 1px solid #262B22"><span>Простыня</span><span style="font-weight: 600">150 ₽</span></div>
-<div style="display: flex; justify-content: space-between; gap: 16px; padding: 18px 0; border-bottom: 1px solid #262B22"><span>Веники</span><span style="font-weight: 600">[ЦЕНА]</span></div>
-<div style="display: flex; justify-content: space-between; gap: 16px; padding: 18px 0; border-bottom: 1px solid #262B22"><span>Халат и тапочки</span><span style="font-weight: 600">[ЦЕНА]</span></div>
-<div style="display: flex; justify-content: space-between; gap: 16px; padding: 18px 0; border-bottom: 1px solid #262B22"><span>Травяной мешочек, эфирное масло</span><span style="font-weight: 600">[ЦЕНА]</span></div>
-<div style="display: flex; justify-content: space-between; gap: 16px; padding: 18px 0"><span>Кальян</span><span style="font-weight: 600">[ЦЕНА]</span></div>
-</div>
-</div>
+<section class="section booking" id="booking">
+  <div class="wrap booking-grid">
+    <div>
+      <h2>Забронировать</h2>
+      <p class="muted" style="margin-top:18px;font-size:18px;max-width:28em">Быстрее всего — позвонить: администратор сразу скажет, какое время свободно. Или оставьте заявку, и мы перезвоним.</p>
+      <a class="big-phone" href="tel:+79687274708"><small>Круглосуточно</small>8 968 727-47-08</a>
+    </div>
+    <form class="book" id="bookForm" novalidate>
+      <label class="field">Имя<input type="text" name="name" autocomplete="given-name" required></label>
+      <label class="field">Телефон<input type="tel" name="phone" autocomplete="tel" placeholder="+7" required></label>
+      <label class="field">Дата<input type="date" name="date" required></label>
+      <label class="field">Во сколько<input type="time" name="time" required></label>
+      <label class="field">Сколько часов
+        <select name="hours"><option>2 часа</option><option>3 часа</option><option selected>4 часа</option><option>5 часов и больше</option><option>На всю ночь</option></select>
+      </label>
+      <label class="field">Сколько гостей<input type="number" name="guests" min="1" max="30" inputmode="numeric"></label>
+      <label class="consent"><input type="checkbox" name="consent" required>Согласен на обработку персональных данных по <a href="#">политике конфиденциальности</a></label>
+      <button class="btn btn-honey" type="submit">Отправить заявку</button>
+      <p class="form-msg" id="formMsg" role="status"></p>
+    </form>
+  </div>
 </section>
 
-<section id="booking" style="background: #1B2017; padding: 96px 32px">
-<div style="max-width: 1280px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 56px; align-items: flex-start">
-<div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
-<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 52px; font-weight: 600; line-height: 1.05">Забронировать сауну</h2>
-<p style="margin: 0; color: #D5CCBC; font-size: 17px; line-height: 1.6">Оставьте заявку — администратор перезвонит и подтвердит время.</p>
-<p style="margin: 0; font-size: 22px; font-weight: 700"><a href="tel:+79687274708" style="color: #EFE8DC; text-decoration: none">8 (968) 727-47-08</a></p>
-<p style="margin: 0; color: #8C8473; font-size: 14px">[Мессенджеры: WhatsApp / Telegram / MAX — уточнить номера]</p>
-</div>
-<form style="flex: 1 1 520px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px">
-<label style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; letter-spacing: 0.06em; color: #A9A08F">ИМЯ<input type="text" name="name" style="background: transparent; border: none; border-bottom: 1px solid #5B6150; color: #EFE8DC; padding: 12px 0; font-size: 17px"></label>
-<label style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; letter-spacing: 0.06em; color: #A9A08F">ТЕЛЕФОН<input type="tel" name="phone" placeholder="+7" style="background: transparent; border: none; border-bottom: 1px solid #5B6150; color: #EFE8DC; padding: 12px 0; font-size: 17px"></label>
-<label style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; letter-spacing: 0.06em; color: #A9A08F">ДАТА<input type="date" name="date" style="background: transparent; border: none; border-bottom: 1px solid #5B6150; color: #EFE8DC; padding: 12px 0; font-size: 17px"></label>
-<label style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; letter-spacing: 0.06em; color: #A9A08F">ВРЕМЯ<input type="time" name="time" style="background: transparent; border: none; border-bottom: 1px solid #5B6150; color: #EFE8DC; padding: 12px 0; font-size: 17px"></label>
-<label style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; letter-spacing: 0.06em; color: #A9A08F">СКОЛЬКО ЧАСОВ<select name="hours" style="background: #1B2017; border: none; border-bottom: 1px solid #5B6150; color: #EFE8DC; padding: 12px 0; font-size: 17px"><option>2 часа</option><option>3 часа</option><option>4 часа</option><option>5 и больше</option></select></label>
-<label style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; letter-spacing: 0.06em; color: #A9A08F">ГОСТЕЙ<input type="number" name="guests" min="1" style="background: transparent; border: none; border-bottom: 1px solid #5B6150; color: #EFE8DC; padding: 12px 0; font-size: 17px"></label>
-<button type="button" style="grid-column: 1 / -1; justify-self: start; background: #D9B27C; color: #15110B; border: none; border-radius: 999px; padding: 18px 40px; font-size: 16px; font-weight: 700; cursor: pointer; min-height: 52px; margin-top: 8px">Отправить заявку</button>
-</form>
-</div>
+<section class="section" id="faq">
+  <div class="wrap">
+    <div class="section-head"><h2>Частые вопросы</h2></div>
+    <div class="faq">
+      <details><summary>Будут ли рядом другие гости?</summary><p>Нет. На время брони весь комплекс — парная, бассейн, зал и комнаты отдыха — только ваш.</p></details>
+      <details><summary>Вы работаете ночью?</summary><p>Да, круглосуточно и без выходных. Можно прийти хоть в три часа ночи.</p></details>
+      <details><summary>Что взять с собой?</summary><p>Ничего обязательного. Полотенца и простыни можно взять у нас по 150 ₽, тапочки и банные принадлежности тоже есть.</p></details>
+      <details><summary>Есть ли парковка?</summary><p>Да, рядом со входом.</p></details>
+      <details><summary>Можно прийти со своей едой и напитками?</summary><p>[Уточнить у владельца]</p></details>
+    </div>
+  </div>
 </section>
 
-<section id="faq" style="padding: 96px 32px">
-<div style="max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 8px">
-<h2 style="margin: 0 0 24px; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 52px; font-weight: 600">Частые вопросы</h2>
-<div style="border-top: 1px solid #262B22; padding: 22px 0"><h3 style="margin: 0 0 8px; font-size: 18px; font-weight: 600">Вы работаете ночью?</h3><p style="margin: 0; color: #A9A08F; line-height: 1.6">Да, круглосуточно и без выходных.</p></div>
-<div style="border-top: 1px solid #262B22; padding: 22px 0"><h3 style="margin: 0 0 8px; font-size: 18px; font-weight: 600">Будут ли рядом другие гости?</h3><p style="margin: 0; color: #A9A08F; line-height: 1.6">Нет, на время брони весь комплекс принадлежит только вашей компании.</p></div>
-<div style="border-top: 1px solid #262B22; padding: 22px 0"><h3 style="margin: 0 0 8px; font-size: 18px; font-weight: 600">Что взять с собой?</h3><p style="margin: 0; color: #A9A08F; line-height: 1.6">Ничего обязательного: полотенца, простыни, тапочки и банные принадлежности можно взять у нас.</p></div>
-<div style="border-top: 1px solid #262B22; padding: 22px 0"><h3 style="margin: 0 0 8px; font-size: 18px; font-weight: 600">Есть ли парковка?</h3><p style="margin: 0; color: #A9A08F; line-height: 1.6">Да, рядом со входом.</p></div>
-<div style="border-top: 1px solid #262B22; border-bottom: 1px solid #262B22; padding: 22px 0"><h3 style="margin: 0 0 8px; font-size: 18px; font-weight: 600">Можно прийти со своей едой и напитками?</h3><p style="margin: 0; color: #A9A08F; line-height: 1.6">[Уточнить у владельца]</p></div>
-</div>
+<section class="section price" id="contacts">
+  <div class="wrap contacts-grid">
+    <div>
+      <h2>Как добраться</h2>
+      <address>Москва, 5-й Верхний Михайловский проезд, 6, стр.&nbsp;6</address>
+      <p class="metro">Метро Шаболовская, Тульская или Ленинский проспект. Парковка у входа.</p>
+      <div class="contacts-actions">
+        <a class="btn btn-honey" href="https://yandex.ru/maps/org/95482074411/" target="_blank" rel="noopener">Построить маршрут</a>
+        <a class="btn btn-line" href="tel:+79687274708">Позвонить</a>
+      </div>
+    </div>
+    <iframe class="map" src="https://yandex.ru/map-widget/v1/org/potapych/95482074411/" title="Сауна «Потапыч» на карте" loading="lazy" allowfullscreen></iframe>
+  </div>
 </section>
+</main>
 
-<section id="contacts" style="background: #171B13; padding: 96px 32px">
-<div style="max-width: 1280px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 48px">
-<div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
-<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 52px; font-weight: 600">Контакты</h2>
-<p style="margin: 0; font-size: 18px; line-height: 1.6">Москва, 5-й Верхний Михайловский проезд, 6, стр. 6</p>
-<p style="margin: 0; color: #A9A08F; line-height: 1.6">м. Шаболовская · м. Тульская · м. Ленинский проспект</p>
-<p style="margin: 0; color: #A9A08F">Работаем круглосуточно</p>
-<p style="margin: 0; font-size: 24px; font-weight: 700"><a href="tel:+79687274708" style="color: #EFE8DC; text-decoration: none">8 (968) 727-47-08</a></p>
-<div style="display: flex; flex-wrap: wrap; gap: 12px">
-<a href="https://yandex.ru/maps/org/95482074411/" style="background: #D9B27C; color: #15110B; text-decoration: none; font-weight: 700; padding: 14px 26px; border-radius: 999px">Построить маршрут</a>
-<a href="https://yandex.ru/maps/org/95482074411/reviews/" style="border: 1px solid #5B6150; color: #EFE8DC; text-decoration: none; font-weight: 600; padding: 14px 26px; border-radius: 999px">Отзывы на Яндекс Картах</a>
-</div>
-</div>
-<div role="img" aria-label="Место для карты" style="flex: 1 1 520px; min-width: 0; height: 420px; border-radius: 4px; background: #1D2219; display: flex; align-items: center; justify-content: center; color: #6F7563">[Карта Яндекса]</div>
-</div>
-</section>
-
-<footer style="padding: 36px 32px; border-top: 1px solid #262B22">
-<div style="max-width: 1280px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; color: #8C8473; font-size: 14px">
-<span>© 2026 Сауна «Потапыч» на Шаболовке</span>
-<a href="#top" style="color: #8C8473">Политика конфиденциальности</a>
-</div>
+<footer>
+  <div class="wrap">
+    <span>© 2026 Сауна «Потапыч» на Шаболовке</span>
+    <a href="#">Политика конфиденциальности</a>
+  </div>
 </footer>
 
+<div class="callbar">
+  <a class="btn btn-honey" href="tel:+79687274708">Позвонить</a>
+  <a class="btn btn-line" href="https://yandex.ru/maps/org/95482074411/" target="_blank" rel="noopener">Маршрут</a>
 </div>
+
+<dialog class="viewer" id="viewer" aria-label="Фото">
+  <button type="button" id="viewerClose" aria-label="Закрыть">×</button>
+  <img id="viewerImg" src="" alt="">
+</dialog>
+
+<script>
+// Просмотр фото крупно
+const viewer=document.getElementById('viewer'),viewerImg=document.getElementById('viewerImg');
+document.querySelectorAll('.gallery button').forEach(b=>b.addEventListener('click',()=>{
+  viewerImg.src=b.dataset.full;viewerImg.alt=b.querySelector('img').alt;viewer.showModal();
+}));
+document.getElementById('viewerClose').addEventListener('click',()=>viewer.close());
+viewer.addEventListener('click',e=>{if(e.target===viewer)viewer.close();});
+
+// Форма: пока демо — заявки не отправляются
+document.getElementById('bookForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const f=e.target,msg=document.getElementById('formMsg');
+  if(!f.name.value.trim()||!f.phone.value.trim()){msg.textContent='Укажите имя и телефон, чтобы мы могли перезвонить.';return;}
+  if(!f.consent.checked){msg.textContent='Отметьте согласие на обработку данных.';return;}
+  msg.textContent='Это демо-версия сайта: заявки пока не отправляются. Позвоните: 8 968 727-47-08.';
+});
+</script>
 </body>
 </html>
