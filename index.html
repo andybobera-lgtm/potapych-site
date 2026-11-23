@@ -99,8 +99,9 @@ p{margin:0}
 /* Цена */
 .price{background:var(--wood-2)}
 .price-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:72px;align-items:start}
-.price-big{font-family:var(--display);font-size:clamp(64px,9vw,128px);line-height:.95;color:var(--honey)}
-.price-big span{display:block;font-family:var(--body);font-size:20px;color:var(--milk);margin-top:16px;line-height:1.4}
+.price-big{font-family:var(--display);font-size:clamp(54px,6.6vw,100px);line-height:.95;color:var(--honey)}
+.price-big .nowrap{display:inline;font-family:var(--display);font-size:inherit;color:inherit;margin:0;white-space:nowrap}
+.price-big span:not(.nowrap){display:block;font-family:var(--body);font-size:20px;color:var(--milk);margin-top:16px;line-height:1.4}
 .included{margin:36px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 24px}
 .included li{padding-left:28px;position:relative}
 .included li::before{content:"";position:absolute;left:0;top:.55em;width:14px;height:8px;border-left:2px solid var(--pool);border-bottom:2px solid var(--pool);transform:rotate(-45deg)}
@@ -223,7 +224,7 @@ footer a{color:var(--muted)}
     <ul class="facts">
       <li><b>от 2000 ₽</b> в час за весь комплекс</li>
       <li><b>24/7</b> без выходных</li>
-      <li><b>4,5</b> на Яндекс Картах</li>
+      <li><b>4,6</b> на Яндекс Картах</li>
       <li>Шаболовская, Тульская, Ленинский проспект</li>
     </ul>
   </div>
@@ -276,7 +277,7 @@ footer a{color:var(--muted)}
   <div class="wrap price-grid">
     <div>
       <h2 class="visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Цена</h2>
-      <p class="price-big">от 2000 ₽<span>в час за весь комплекс — на любое количество часов</span></p>
+      <p class="price-big"><span class="nowrap">от 2000&nbsp;₽</span><span>в час за весь комплекс — на любое количество часов</span></p>
       <ul class="included">
         <li>Финская парная</li>
         <li>Бассейн</li>
@@ -321,8 +322,8 @@ footer a{color:var(--muted)}
   <div class="wrap reviews-grid">
     <div>
       <h2>Что говорят гости</h2>
-      <p class="rating" style="margin-top:32px">4,5</p>
-      <p class="muted" style="margin-top:8px">средняя оценка на Яндекс Картах по 168 оценкам</p>
+      <p class="rating" style="margin-top:32px">4,6</p>
+      <p class="muted" style="margin-top:8px">средняя оценка гостей на Яндекс Картах</p>
       <a class="btn btn-line" style="margin-top:32px" href="https://yandex.ru/maps/org/95482074411/reviews/" target="_blank" rel="noopener">Все отзывы на Яндекс Картах</a>
     </div>
     <iframe class="reviews-frame" src="https://yandex.ru/maps-reviews-widget/95482074411?comments" title="Отзывы о сауне на Яндекс Картах" loading="lazy"></iframe>
@@ -376,7 +377,7 @@ footer a{color:var(--muted)}
         <a class="btn btn-line" href="tel:+79687274708">Позвонить</a>
       </div>
     </div>
-    <iframe class="map" src="https://yandex.ru/map-widget/v1/org/potapych/95482074411/" title="Сауна «Потапыч» на карте" loading="lazy" allowfullscreen></iframe>
+    <iframe class="map" src="https://yandex.ru/map-widget/v1/?ll=37.605418%2C55.706908&amp;z=16&amp;pt=37.605418%2C55.706908%2Cpm2orl" title="Сауна «Потапыч» на карте" loading="lazy" allowfullscreen></iframe>
   </div>
 </section>
 </main>
